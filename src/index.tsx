@@ -10,7 +10,9 @@ export enum ColorMode {
 
 export interface Props {
   name?: string;
-  prompt?: string;
+  sshDir?: string;
+  fileDir?: string;
+  twindClass?: string;
   height?: string;
   colorMode?: ColorMode;
   children?: ReactNode;
@@ -22,7 +24,7 @@ export interface Props {
   scrollToPosition?: boolean;
 }
 
-const Terminal = ({name, prompt, height = "600px", colorMode, onInput, children, startingInputValue = "", redBtnCallback, yellowBtnCallback, greenBtnCallback, scrollToPosition = true}: Props) => {
+const Terminal = ({ name, sshDir, fileDir, twindClass, height = "600px", colorMode, onInput, children, startingInputValue = "", redBtnCallback, yellowBtnCallback, greenBtnCallback, scrollToPosition = true}: Props) => {
   const [currentLineInput, setCurrentLineInput] = useState('');
   const [cursorPos, setCursorPos] = useState(0);
 
@@ -124,7 +126,11 @@ const Terminal = ({name, prompt, height = "600px", colorMode, onInput, children,
       </div>
       <div className="react-terminal" style={ { height } }>
         { children }
-        { typeof onInput === 'function' && <div className="react-terminal-line react-terminal-input react-terminal-active-input" data-terminal-prompt={ prompt || '$' } key="terminal-line-prompt" >{ currentLineInput }<span className="cursor" style={{ left: `${cursorPos+1}px` }}></span></div> }
+        { typeof onInput === 'function' && 
+          <TerminalInput sshDir={sshDir} fileDir={fileDir} twindClass={twindClass} activeCursor={true} >
+                      { currentLineInput } <span className="cursor" style={{ left: `${cursorPos+1}px` }}></span>
+          </TerminalInput>
+        }
         <div ref={ scrollIntoViewRef }></div>
       </div>
       <input className="terminal-hidden-input" placeholder="Terminal Hidden Input" value={ currentLineInput } autoFocus={ onInput != null } onChange={ updateCurrentLineInput } onKeyDown={ handleInputKeyDown }/>

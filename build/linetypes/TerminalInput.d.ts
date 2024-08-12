@@ -3,7 +3,7 @@ declare type TerminalInputProps = PropsWithChildren<{
     sshDir?: string;
     fileDir?: string;
     twindClass?: string;
-    active?: boolean;
+    activeCursor?: boolean;
 }>;
-declare const TerminalInput: ({ children, sshDir, fileDir, twindClass, active }: TerminalInputProps) => React.JSX.Element;
+declare const TerminalInput: ({ children, sshDir, fileDir, twindClass, activeCursor }: TerminalInputProps) => React.JSX.Element;
 export default TerminalInput;
