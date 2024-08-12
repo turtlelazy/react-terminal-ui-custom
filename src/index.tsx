@@ -126,10 +126,10 @@ const Terminal = ({ name, sshDir, fileDir, twindClass, height = "600px", colorMo
       </div>
       <div className="react-terminal" style={ { height } }>
         { children }
-        { typeof onInput === 'function' && 
-          <TerminalInput sshDir={sshDir} fileDir={fileDir} twindClass={twindClass} active={true} >
-                      { currentLineInput } <span className="cursor" style={{ left: `${cursorPos+1}px` }}></span>
-          </TerminalInput>
+        { typeof onInput === 'function' && <p>aaa</p>
+          // <TerminalInput sshDir={sshDir} fileDir={fileDir} twindClass={twindClass} active={true} >
+          //             { currentLineInput } <span className="cursor" style={{ left: `${cursorPos+1}px` }}></span>
+          // </TerminalInput>
         }
         <div ref={ scrollIntoViewRef }></div>
       </div>
