@@ -15,7 +15,7 @@ const TerminalInput = ({ children, sshDir, fileDir, twindClass = "text-green-400
             <span className="react-terminal-input-prompt">
                 <span className={twindClass}>{sshDir}</span>:<span className={twindClass}>{fileDir}</span>$
             </span>
-            <span className={active ? " react-terminal-active-input" : ""}>{children}</span>
+            <span >{children}</span>
             
         </div>
     );
