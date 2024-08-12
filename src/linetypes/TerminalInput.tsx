@@ -10,12 +10,13 @@ type TerminalInputProps = PropsWithChildren<{
 const TerminalInput = ({ children, sshDir, fileDir, twindClass = "text-green-400", active = false }: TerminalInputProps) => {
     return (
         <div
-            className={"react-terminal-line" + active ? " react-terminal-active-input" : ""}
+            className={"react-terminal-line"}
         >
             <span className="react-terminal-input-prompt">
                 <span className={twindClass}>{sshDir}</span>:<span className={twindClass}>{fileDir}</span>$
             </span>
-            {children}
+            <span className={active ? " react-terminal-active-input" : ""}>{children}</span>
+            
         </div>
     );
 };
