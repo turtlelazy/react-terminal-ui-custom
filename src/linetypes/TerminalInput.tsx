@@ -1,20 +1,17 @@
 import React, { PropsWithChildren } from "react";
 
 type TerminalInputProps = PropsWithChildren<{
-    sshDir?: string;
-    fileDir?: string;
-    twindClass?: string;
+    prompt?: string;
 }>;
 
-const TerminalInput = ({ children, sshDir, fileDir, twindClass = "text-green-400" }: TerminalInputProps) => {
+const TerminalInput = ({ children, prompt }: TerminalInputProps) => {
     return (
         <div
-            className="react-terminal-line"
+            className="react-terminal-line react-terminal-input"
+            data-terminal-prompt={prompt || "$"}
         >
-            <span className="react-terminal-input-prompt">
-                <span className={twindClass}>{sshDir}</span>:<span className={twindClass}>{fileDir}</span>$
-            </span>
             {children}
+            <span>asdasdasd</span>
         </div>
     );
 };
