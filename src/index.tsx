@@ -128,7 +128,7 @@ const Terminal = ({ name, sshDir, fileDir, twindClass, height = "600px", colorMo
         { children }
         { typeof onInput === 'function' && 
           <TerminalInput sshDir={sshDir} fileDir={fileDir} twindClass={twindClass} activeCursor={true} >
-                      { currentLineInput } <span className="cursor" style={{ left: `${cursorPos + 3}px` }}></span>
+                      { currentLineInput } <span className="cursor" style={{ left: `${cursorPos + 1}px` }}></span>
           </TerminalInput>
         }
         <div ref={ scrollIntoViewRef }></div>
