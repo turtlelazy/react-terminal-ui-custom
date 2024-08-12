@@ -8,7 +8,9 @@ export declare enum ColorMode {
 }
 export interface Props {
     name?: string;
-    prompt?: string;
+    sshDir?: string;
+    fileDir?: string;
+    twindClass?: string;
     height?: string;
     colorMode?: ColorMode;
     children?: ReactNode;
@@ -19,6 +21,6 @@ export interface Props {
     greenBtnCallback?: () => void;
     scrollToPosition?: boolean;
 }
-declare const Terminal: ({ name, prompt, height, colorMode, onInput, children, startingInputValue, redBtnCallback, yellowBtnCallback, greenBtnCallback, scrollToPosition }: Props) => React.JSX.Element;
+declare const Terminal: ({ name, sshDir, fileDir, twindClass, height, colorMode, onInput, children, startingInputValue, redBtnCallback, yellowBtnCallback, greenBtnCallback, scrollToPosition }: Props) => React.JSX.Element;
 export { TerminalInput, TerminalOutput };
 export default Terminal;
