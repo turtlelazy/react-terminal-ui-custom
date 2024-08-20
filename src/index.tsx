@@ -124,7 +124,7 @@ const Terminal = ({ name, sshDir, fileDir, twindClass, height = "600px", colorMo
         <button className={`${yellowBtnCallback ? "clickable" : ""} yellow-btn`} disabled={!yellowBtnCallback} onClick={ yellowBtnCallback } />
         <button className={`${greenBtnCallback ? "clickable" : ""} green-btn`} disabled={!greenBtnCallback} onClick={ greenBtnCallback } />
       </div>
-      <div className="react-terminal" style={ { height } }>
+      <div className="react-terminal flex" style={ { height } }>
         { children }
         { typeof onInput === 'function' && 
           <TerminalInput sshDir={sshDir} fileDir={fileDir} twindClass={twindClass} activeCursor={true} >{ currentLineInput }<span className="cursor" style={{ left: `${cursorPos + 1}px` }}></span>
