@@ -10,7 +10,7 @@ type TerminalInputProps = PropsWithChildren<{
 const TerminalInput = ({ children, sshDir, fileDir, twindClass = "text-green-400", activeCursor = false }: TerminalInputProps) => {
     return (
         <div
-            className={"react-terminal-line"}
+            className={"react-terminal-line flex-1"}
         >
             <span className="react-terminal-input-prompt">
                 <span className={twindClass}>{sshDir}</span>:<span className={twindClass}>{fileDir}</span>$
